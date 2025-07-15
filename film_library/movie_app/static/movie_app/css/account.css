@@ -1,0 +1,91 @@
+.login {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.login form {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #444;
+}
+
+.login form input[type="text"],
+.login form input[type="password"],
+.login form input[type="email"] {
+    width: 94%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.login form input:focus {
+    border-color: #007acc;
+    box-shadow: 0 0 5px rgba(0, 122, 204, 0.2);
+}
+
+.login form button {
+    padding: 12px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.login form button:hover {
+    background-color: #005fa3;
+    transform: scale(1.03);
+}
+
+.form-error {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: -8px;
+}
+
+.personal-info {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.personal-info p {
+    margin-bottom: 12px;
+}
+
+.personal-info h1 {
+    text-align: left;
+    margin-bottom: 20px;
+}

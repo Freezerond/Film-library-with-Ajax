@@ -1,0 +1,11 @@
+{% extends 'movie_app/base.html' %}
+
+{% block title %}{{user.username}}{% endblock %}
+
+{% block content %}
+<div class="personal-info">
+    <h1>{{ user.username }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Зарегистрирован {{user.date_joined}}</p>
+</div>
+{% endblock %}

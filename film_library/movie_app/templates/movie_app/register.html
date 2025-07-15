@@ -1,0 +1,21 @@
+{% extends 'movie_app/base.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<h1>Регистрация</h1>
+
+<div class="login">
+    <form method="post">
+        {% csrf_token %}
+
+        {%for f in form%}
+        <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label></p>
+        {{f}}
+        <div class="form-error">{{f.errors}}</div>
+        {%endfor%}
+
+        <br><button type="submit">Регистрация</button>
+    </form>
+</div>
+{%endblock%}

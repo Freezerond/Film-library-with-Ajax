@@ -1,0 +1,45 @@
+{%extends 'movie_app/base.html' %}
+{%load static%}
+
+{% block title %}{{movie.title}}{%endblock%}
+
+{%block content%}
+<body data-movie-id="{{movie.id}}" data-auth="{{user.is_authenticated|yesno:'true,false'}}">
+    <h1 class="movie-title">{{ movie.title }}</h1>
+
+    <div class="movie-container">
+        <div class="movie-info">
+            <img src="{{movie.image.url}}" class="poster">
+            <div class="movie-description"><p>{{movie.description}}</p></div>
+        </div>
+        {%if movie.films%}
+            <video controls>
+                <source src="{{movie.films.url}}" type="video/mp4">
+            </video>
+        {%endif%}
+
+        <div class="movie-votes">
+            <button id="like-button" data-vote="1">👍 <span id="like-count">{{like_count}}</span></button>
+            <button id="dislike-button" data-vote="-1">👎 <span id="dislike-count">{{dislike_count}}</span></button>
+        </div>
+
+        <h4>Комментарии</h4>
+        <div id="comments-container">
+            {%for comm in comments%}
+              {%include 'movie_app/additionally/comment.html' with comm=comm%}
+            {%empty%}
+              <p id="no-comments">Комментариев пока нет.</p>
+            {%endfor%}
+        </div>
+
+        <form id="comment-form" method="post">
+          {%csrf_token%}
+          {{form.content}}
+
+          <button type="submit">Оставить комментарий</button>
+        </form>
+    </div>
+
+    <script src="{%static 'movie_app/js/movie_detail.js'%}"></script>
+</body>
+{%endblock%}

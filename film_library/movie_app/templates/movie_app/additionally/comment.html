@@ -1,0 +1,8 @@
+<div class="comments-movie" id="comment-{{ comm.pk }}">
+    <strong>{{ comm.author }}</strong><br>
+    <small>{{ comm.time_create }}</small>
+    <p>{{ comm.content }}</p>
+    {% if user == comm.author %}
+        <button class="delete-comment" data-id="{{ comm.pk }}">Удалить</button>
+    {% endif %}
+</div>
